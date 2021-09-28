@@ -4,9 +4,10 @@
 * [Docker](#What-is-Docker)
 * [Installation](#Installation-of-Docker)
 * [Check Installation](#Check-Docker-is-Working)
-* [Docker Command Cheatsheet](#Docker-Commands)
+* [Docker Cheatsheet](#Docker-Commands)
 * [Interacting with Running Container](#Interacting-with-Running-Container)
-* [Copying a html file from Localhost to Container](#Copying-a-html-file-from-Localhost-to-Container)
+* [Copying a html file from Localhost -> Container](#Copying-a-html-file-from-Localhost-to-Container)
+* [Creating Image](#Creating-our-own-Image)
 * [Microservices](#Microservices)
 * [Comparison](#Comparison)
 
