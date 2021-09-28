@@ -1,5 +1,8 @@
 # Docker Introduction
+![image1](https://www.docker.com/sites/default/files/d8/2019-07/horizontal-logo-monochromatic-white.png)
 ## What is Docker
+Docker is the world's leading software containerization platform. It encapsulates your microservice into what we call as Docker container which can then be independently maintained and deployed. Each of these containers will be responsible for one specific business functionality
+
 #### Advantages
 - Docker is a popular evolving software with excellent community support and built for microservices
 - It is lightweight when compared to VMs making it cost and resource effective
@@ -28,7 +31,7 @@
 
 
 ## Microservices
-![micro](![image](https://user-images.githubusercontent.com/74776086/135053106-1da1883f-c57c-494a-a73d-71a17a188f0e.png)
+![image](https://user-images.githubusercontent.com/74776086/135053106-1da1883f-c57c-494a-a73d-71a17a188f0e.png)
 ### Advantages
 - Introduces the philosophy of Separation of Concerns and ensures Agile Development of software applications in both simple and complex domains
 - The standalone ability or independent nature of microservices open doors for following benefits:
