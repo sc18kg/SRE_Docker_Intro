@@ -101,8 +101,8 @@ CMD ["nginx", "-g", "daemon off;"]
 ```
 Then run the command `docker build -t name_of_account/name_of_image:v1 .`
 Now check the image has been created with `docker images`
-Finally `docker run -d -p 80:80 `
-
+run the image using `docker run -d -p 80:80 name_of_account/name_of_image:v1`
+And now finally push using `docker push name_of_account/name_of_image:v1`
 
 ## Microservices
 ![image](https://user-images.githubusercontent.com/74776086/135053106-1da1883f-c57c-494a-a73d-71a17a188f0e.png)
