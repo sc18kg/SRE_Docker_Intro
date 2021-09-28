@@ -78,6 +78,31 @@ To interact with the running container there are a few steps needed:
 7. Now the last step is to push the image which is currenly stored on localhost `docker push name_of_account/name_of_image` here you can also add `:v1` if youd like versions
 8. Check Dockerhub to see your image online!
 
+## Creating our own Image
+Create a file called `Dockerfile`
+```
+# Building our own Image
+
+# Chose the starting Image
+FROM  nginx:latest
+
+LABEL MAINTAINER=sc18kg
+# Create the container
+
+
+# Copy the index.html from localhost to container
+COPY SRE_Docker_Intro/index.html /usr/share/nginx/html
+
+# Port 80
+EXPOSE 80
+
+# CMD to launch the nginx web server nginx global
+CMD ["nginx", "-g", "daemon off;"]
+```
+Then run the command `docker build -t name_of_account/name_of_image:v1 .`
+Now check the image has been created with `docker images`
+Finally `docker run -d -p 80:80 `
+
 
 ## Microservices
 ![image](https://user-images.githubusercontent.com/74776086/135053106-1da1883f-c57c-494a-a73d-71a17a188f0e.png)
