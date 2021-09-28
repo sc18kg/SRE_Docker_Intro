@@ -32,7 +32,42 @@ Docker is the world's leading software containerization platform. It encapsulate
 ### Docker Commands
 1. `docker run name_of_image`
 2. `docker pull name_of_image`
-3. 
+3. `docker push username/name_of_image`
+4. `docker rmi name_of_image`
+5. `docker rm containerID`
+6. `docker stop containerID`
+7. `docker start containerID`
+8. `docker ps` or `docker ps -a`
+
+### Docker Life Cycle
+- Stop
+- Start
+- Remove
+
+### Rm vs Stop
+When we perform the command `docker stop` this saves the state of the container but stops it running on the port its been allocated. Compared to `docker rm` which ultimately removes all changes and information that is stored on the container and returns back to the original state of the image if `docker run` is performed again.
+You are able to view your stopped containers using the command `docker ps -a` which then shows the container ID needed to start the container again using `docker start containerID` which continues the container in the exact same state when stopped.
+
+### Interacting with Running Container
+To interact with the running container there are a few steps needed:
+- Is the container to be interacted with running? check using `docker ps`
+- If the container is running we need to copy to `Container Id`
+- Once you have the `Container Id` run the command `docker exec -it [ContainerID]`
+- If this fails with the error `Input device is not TTY` use this command `alias docker ="winpty docker"`
+- then repeat ` docker exec -it [ContainerID]` again this time a `#` should appear, Here youre in the container
+- Once finished run the command `exit` to escape the container
+
+## Copying a html file from Localhost to Container
+1. First you want to create the `.html` file which you would like to copy to the container
+2. Once completed you need to take note of the absolute path of the file
+3. Run the command `docker cp /absolute/path/to/file containerID:\usr/share/nginx/html` this location is the default for nginx
+4. Next once changed you can check this in your browser
+5. Once the change has been made, you can commit this change using `docker commit containerID name_of_account/name_of_image`
+6. Check the image is there by `docker images`
+7. Now the last step is to push the image which is currenly stored on localhost `docker push name_of_account/name_of_image` here you can also add `:v1` if youd like versions
+8. Check Dockerhub to see your image online!
+
+
 ## Microservices
 ![image](https://user-images.githubusercontent.com/74776086/135053106-1da1883f-c57c-494a-a73d-71a17a188f0e.png)
 ### Advantages
