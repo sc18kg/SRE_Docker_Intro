@@ -105,6 +105,38 @@ Now check the image has been created with `docker images`
 run the image using `docker run -d -p 80:80 name_of_account/name_of_image:v1`
 And now finally push using `docker push name_of_account/name_of_image:v1`
 
+## Creating a MicroService for our NodeApp
+- Build an image for the app
+- Select the correct image for `node`
+- COPY dependancies from localhost to container app default location
+- COPY package.json files
+- RUN npm install
+- RUN npm install express
+- RUN seeds/seed.js only after the DB has been been created 
+- EXPOSE 3000
+- CMD ["node", "app.js"]
+```
+FROM node
+
+# Where the working directory will be when we exec in the container
+WORKDIR /usr/src/app
+
+# Copy all the dependancies into current location
+COPY package*.json ./
+
+RUN npm install -g npm@latest
+RUN npm install express
+
+# RUN seeds/seed.js will be used when DB is sorted
+
+COPY . .
+
+EXPOSE 3000
+
+CMD ["node", "app.js"]
+```
+Run this using `docker build -t sc18kg/sre_node_app:v1 .`
+
 ## Microservices
 ![image](https://user-images.githubusercontent.com/74776086/135053106-1da1883f-c57c-494a-a73d-71a17a188f0e.png)
 ### Advantages
