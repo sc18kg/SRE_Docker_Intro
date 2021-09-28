@@ -29,7 +29,10 @@ Docker is the world's leading software containerization platform. It encapsulate
 3. Now you have listed your images, you can run the ones available so run `docker run hello-world`
 4. If you see the screen below, Congratulations you can finished and verified the installation.
 
-
+### Docker Commands
+1. `docker run name_of_image`
+2. `docker pull name_of_image`
+3. 
 ## Microservices
 ![image](https://user-images.githubusercontent.com/74776086/135053106-1da1883f-c57c-494a-a73d-71a17a188f0e.png)
 ### Advantages
